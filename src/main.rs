@@ -253,7 +253,7 @@ async fn inspect_status(
         .header("Idempotency-Key", format!("a11y-v2-{}", status.id))
         .form(&PostStatus {
             status: format!(
-                "@{} Chrome Lighthouse reports a a11y score of {} on this link, FYI.\n\n{}",
+                "@{} Hey, this link might be inaccessible. The lighthouse score is {}.\n\n{}",
                 status.account.acct, score, url
             ),
             in_reply_to_id: status.id.clone(),
