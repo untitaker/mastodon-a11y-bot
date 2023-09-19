@@ -1,5 +1,11 @@
 FROM rust:1.66-alpine3.16 as builder
 
+RUN mkdir -p ~/.cargo && \
+    echo '[registries.crates-io]' > ~/.cargo/config && \
+    echo 'protocol = "sparse"' >> ~/.cargo/config
+
+RUN apk add --no-cache libc-dev
+
 RUN USER=root cargo new --bin /app
 WORKDIR /app
 
