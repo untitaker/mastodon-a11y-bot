@@ -184,7 +184,7 @@ async fn check_statuses(
         for status in &page_result {
             status_count += 1;
             if let Err(e) =
-                inspect_status(&config, pagespeed_client.clone(), client.clone(), &status).await
+                inspect_status(config, pagespeed_client.clone(), client.clone(), status).await
             {
                 log::error!("failed to process status {}: {}", status.id, e);
             }
