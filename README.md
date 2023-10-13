@@ -12,4 +12,4 @@ Use it at [`@a11y_link_bot@mastodon.social`](https://mastodon.social/@a11y_link_
 
 ## License
 
-MIT, see `LICENSE`.
+MIT
