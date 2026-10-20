@@ -133,7 +133,7 @@ async fn check_followers(config: &Config, client: Client) -> Result<(), Error> {
             );
 
             client
-                .post(&format!(
+                .post(format!(
                     "{}/api/v1/accounts/{}/follow",
                     config.instance, item.account.id
                 ))
@@ -249,7 +249,7 @@ async fn inspect_status(
     }
 
     client
-        .post(&format!("{}/api/v1/statuses", config.instance))
+        .post(format!("{}/api/v1/statuses", config.instance))
         .header("Idempotency-Key", format!("a11y-v2-{}", status.id))
         .form(&PostStatus {
             status: format!(
