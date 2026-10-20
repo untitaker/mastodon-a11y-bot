@@ -1,4 +1,4 @@
-FROM rust:1.66-alpine3.16 as builder
+FROM rust:1.90-alpine AS builder
 
 RUN mkdir -p ~/.cargo && \
     echo '[registries.crates-io]' > ~/.cargo/config && \
